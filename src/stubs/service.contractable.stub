@@ -1,8 +1,8 @@
 <?php
 
-{{ namespace }}
+namespace {{ namespace }};
 
-use {{ contractImport }};
+{{ contractImport }}
 
 class {{ class }} extends {{ contract }}
 {
