@@ -2,9 +2,9 @@
 
 namespace {{ namespace }};
 
-{{ contractImport }}
+use {{ contractImport }};
 
-class {{ service }} extends {{ contract }}
+class {{ class }} extends {{ contract }}
 {
     //
 }

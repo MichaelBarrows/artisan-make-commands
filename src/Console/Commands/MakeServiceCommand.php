@@ -13,7 +13,12 @@ class MakeServiceCommand extends GeneratorCommand
 
     protected function getStub()
     {
-        return __DIR__.'/../../stubs/service.stub';
+        $stub = null;
+        if ($this->option('contract')) {
+            $stub = 'service.contractable.stub';
+        }
+
+        return __DIR__.'/../../stubs/' . ($stub ?: 'service.stub');
     }
 
     protected function getDefaultNamespace($rootNamespace)
@@ -24,21 +29,25 @@ class MakeServiceCommand extends GeneratorCommand
     protected function getOptions()
     {
         return [
-            ['contract', null, InputOption::VALUE_NONE, 'Specify the contract to bind the service to.'],
+            ['contract', null, InputOption::VALUE_OPTIONAL, 'Specify the contract to bind the service to.'],
         ];
     }
 
     protected function buildClass($name)
     {
+        $stub = parent::buildClass($name);
+
         $replace = [];
 
         if ($this->option('contract')) {
-            $replace['{{ contract }}'] = $this->option->contract;
-            $replace['{{ contractImport }}'] = "use \\App\\Contracts\\{$this->option->contract};";
+            $replace['{{ contract }}'] = $this->option('contract');
+            $replace['{{ contractImport }}'] = 'App\\Contracts\\' . $this->option('contract');
         }
 
-        $replace['{{ service }}'] = $name;
-
-        return $replace;
+        return str_replace(
+            array_keys($replace),
+            array_values($replace),
+            $stub
+        );
     }
 }
