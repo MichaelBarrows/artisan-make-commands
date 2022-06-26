@@ -41,7 +41,7 @@ class MakeServiceCommand extends GeneratorCommand
 
         if ($this->option('contract')) {
             $replace['{{ contract }}'] = $this->option('contract');
-            $replace['{{ contractImport }}'] = 'App\\Contracts\\' . $this->option('contract');
+            $replace['{{ contractImport }}'] = "use App\\Contracts\\{$this->option('contract')};";
         }
 
         return str_replace(
