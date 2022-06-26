@@ -12,7 +12,7 @@ class MakeTraitCommand extends GeneratorCommand
 
     protected function getStub()
     {
-        return $this->resolveStubPath(__DIR__.'/../../stubs/trait.stub');
+        return __DIR__.'/../../stubs/trait.stub';
     }
 
     protected function getDefaultNamespace($rootNamespace)
