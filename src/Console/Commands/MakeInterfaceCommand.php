@@ -12,7 +12,7 @@ class MakeInterfaceCommand extends GeneratorCommand
 
     protected function getStub()
     {
-        return $this->resolveStubPath(__DIR__.'/../../stubs/interface.stub');
+        return __DIR__.'/../../stubs/interface.stub';
     }
 
     protected function getDefaultNamespace($rootNamespace)

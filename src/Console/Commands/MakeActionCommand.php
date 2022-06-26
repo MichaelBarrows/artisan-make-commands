@@ -12,7 +12,7 @@ class MakeActionCommand extends GeneratorCommand
 
     protected function getStub()
     {
-        return $this->resolveStubPath(__DIR__.'/../../stubs/action.stub');
+        return __DIR__.'/../../stubs/action.stub';
     }
 
     protected function getDefaultNamespace($rootNamespace)
