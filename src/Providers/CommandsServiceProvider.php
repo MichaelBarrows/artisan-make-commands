@@ -1,6 +1,6 @@
 <?php
 
-namespace MichaelBarrows\ArtisanCommands\Providers;
+namespace MichaelBarrows\ArtisanMakeCommands\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

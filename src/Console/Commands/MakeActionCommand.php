@@ -1,6 +1,6 @@
 <?php
 
-namespace MichaelBarrows\ArtisanCommands\Console\Commands;
+namespace MichaelBarrows\ArtisanMakeCommands\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 
