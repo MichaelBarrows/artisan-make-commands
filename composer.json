@@ -1,0 +1,29 @@
+{
+    "name": "michaelbarrows/artisan-make-commands",
+    "description": "Extra `make:` commands for artisan",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "MichaelBarrows\\ArtisanMakeCommands\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michael Barrows",
+            "email": "mail@michaelbarrows.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.0",
+        "illuminate/console": "^9",
+        "illuminate/support": "^9"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MichaelBarrows\\ArtisanMakeCommands\\Providers\\CommandsServiceProvider"
+            ]
+        }
+    }
+}
