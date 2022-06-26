@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+{{ contractImport }}
+
+class {{ service }} extends {{ contract }}
+{
+    //
+}
