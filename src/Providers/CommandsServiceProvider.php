@@ -11,6 +11,8 @@ class CommandsServiceProvider extends ServiceProvider
     {
         $this->commands([
             Commands\MakeActionCommand::class,
+            Commands\MakeContractCommand::class,
+            Commands\MakeInterfaceCommand::class,
             Commands\MakeServiceCommand::class,
         ]);
     }
