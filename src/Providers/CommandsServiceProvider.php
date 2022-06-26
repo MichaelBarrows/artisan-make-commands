@@ -14,6 +14,7 @@ class CommandsServiceProvider extends ServiceProvider
             Commands\MakeContractCommand::class,
             Commands\MakeInterfaceCommand::class,
             Commands\MakeServiceCommand::class,
+            Commands\MakeTraitCommand::class,
         ]);
     }
 
