@@ -21,6 +21,11 @@ class CommandsServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/../Console/Commands' => app_path('Console/Commands/vendor/artisan-make-commands'),
+        ], 'commands');
+        $this->publishes([
+            __DIR__.'/../stubs' => base_path('stubs/vendor/artisan-make-commands'),
+        ], 'stubs');
     }
 }
