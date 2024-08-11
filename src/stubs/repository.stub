@@ -1,0 +1,33 @@
+<?php
+
+namespace {{ namespace }};
+
+{{ modelImport }}
+
+class {{ class }}
+{
+    public function create{{ model }}(array $args = []): ?{{ model }}
+    {
+        $record = new {{ model }};
+
+        $record->fill($args);
+
+        $record->save();
+
+        return $record;
+    }
+
+    public function update{{ model }}({{ model }} $model, array $args = []): {{ model }}
+    {
+        $model->fill($args);
+
+        $model->save();
+
+        return $model;
+    }
+
+    public function delete{{ model }}({{ model }} $model): bool
+    {
+        return $model->delete();
+    }
+}

@@ -1,0 +1,38 @@
+<?php
+
+use App\Models\{{ model }};
+use App\Repositories\{{ repository }};
+
+it('creates the model', function () {
+    $args = {{ model }}::factory()->definition();
+    $repository = new {{ repository }};
+
+    $result = $repository->create{{ model }}($args);
+
+    expect($result)->toBeInstanceOf({{ model }}::class);
+    foreach ($args as $key => $value) {
+        expect($result)->{$key}->toBe($value);
+    }
+});
+
+it('updates the model', function () {
+    $args = {{ model }}::factory()->definition();
+    $model = {{ model }}::factory()->create();
+    $repository = new {{ repository }};
+
+    $result = $repository->update{{ model }}($model, $args);
+
+    foreach ($args as $key => $value) {
+        expect($result)->{$key}->toBe($value);
+    }
+});
+
+it('deletes the model', function () {
+    $model = {{ model }}::factory()->create();
+    $repository = new {{ repository }};
+
+    $result = $repository->delete{{ model }}($model);
+
+    expect($result)->toBe(true);
+    expect({{ model }}::count())->toBe(0);
+});

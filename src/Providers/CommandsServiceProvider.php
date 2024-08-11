@@ -14,6 +14,8 @@ class CommandsServiceProvider extends ServiceProvider
             Commands\MakeContractCommand::class,
             Commands\MakeEnumCommand::class,
             Commands\MakeInterfaceCommand::class,
+            Commands\MakeRepositoryCommand::class,
+            Commands\MakeRepositoryTestCommand::class,
             Commands\MakeServiceCommand::class,
             Commands\MakeTraitCommand::class,
         ]);
