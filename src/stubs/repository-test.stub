@@ -20,7 +20,10 @@ it('updates the model', function () {
     $model = {{ model }}::factory()->create();
     $repository = new {{ repository }};
 
-    $result = $repository->update{{ model }}($model, $args);
+    $result = $repository->update{{ model }}(
+        model: $model,
+        args: $args,
+    );
 
     foreach ($args as $key => $value) {
         expect($result)->{$key}->toBe($value);

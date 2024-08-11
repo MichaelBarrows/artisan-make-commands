@@ -4,7 +4,6 @@ namespace MichaelBarrows\ArtisanMakeCommands\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
-use Symfony\Component\Console\Input\InputOption;
 
 class MakeRepositoryCommand extends GeneratorCommand
 {
